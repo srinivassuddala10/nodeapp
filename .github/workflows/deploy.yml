@@ -16,7 +16,7 @@ jobs:
 
       # Log in to DockerHub (replace with your registry)
       - name: Docker Login
-        run: echo "${{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}}" | docker login -u "${{srinivassuddala10}}" --password-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
+        run: echo "${{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}}" | docker login -u "${{srinivas078}}" --password-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
 
       # Build Docker image
       - name: Build Docker Image
@@ -31,7 +31,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{13.233.198.215}}
-          username: ${{srinivasssuddala10}}
+          username: ${{srinivass078}}
           key: ${{ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCy60igOORLKAwTo6AyD4s475dYA4DSM/XD2bKCgEfrN4jZAhNAS/Zw/9W24Quuyd5R54xbD4uwo5Qla82uTdhyc37JCT5hVCZ+8UsZYDnn5XEqPVVleUl36oehHrXzMHDoPGpQEh27s9v8gTxcB/XnWoD1aCmaqa1VTfqutWmOyXS0jarPqOpeoA9S+nGv6vMLc5Wp9s1knBgolqqg1eEZXRH17KosfZX26Trc1vgCOaEiu8IdKbsbIiKrC26dWszCZMoEJNYUEX3SUXpYTSSTsTg8Pg+xkMjEjXGLzEWHS9mUX5zwW9cio03cTirGQ+8ZbPBscDR0hpu2h0/SpJIv srinivas}}
           script: |
             docker pull your-dockerhub-username/helloworld-node:latest
