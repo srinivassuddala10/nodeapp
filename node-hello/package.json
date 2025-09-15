@@ -1,11 +1,32 @@
-{
-  "name": "node-hello",
-  "version": "1.0.0",
-  "description": "Hello World Node.js app in Docker",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {}
-}
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./   # 👈 Root (where package.json exists)
+
+      - name: Run tests
+        run: npm test
+        working-directory: ./   # 👈 Same as above
+
+      - name: Build Docker image
+        run: docker build -t my-node-app .
+
 
