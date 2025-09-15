@@ -16,16 +16,15 @@ jobs:
 
       # Log in to DockerHub (replace with your registry)
        name: Docker Login
-        - name: Docker Login
-  run: echo "${{dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4}}" | docker login -u "${{srinivas078}}" --password-stdin
+  run: echo "${{dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4}}" | docker login -u "${{srinivas078}}" #--password-stdin
       
       # Build Docker image
       - name: Build Docker Image
-        run: docker build -t node-hello/helloworld-node:latest .
+        run: docker build -t node-hello/helloworld-nodenode-hello:latest .
 
       # Push Docker image
       - name: Push Docker Image
-        run: docker push node-hello/helloworld-node:latest
+        run: docker push node-hello/helloworld-node:latest .
 
       # Deploy to Ubuntu server via SSH
       - name: Deploy to Ubuntu Server
