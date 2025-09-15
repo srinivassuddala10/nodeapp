@@ -15,8 +15,8 @@ jobs:
         uses: actions/checkout@v3
 
       # Log in to DockerHub (replace with your registry)
-       name: Docker Login
-  run: echo "${{dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4}}" | docker login -u "${{srinivas078}}" --password-dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4
+     #  name: Docker Login
+  #run: echo "${{dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4}}" | docker login -u "${{srinivas078}}" --password-dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4
       
       # Build Docker image
       - name: Build Docker Image
