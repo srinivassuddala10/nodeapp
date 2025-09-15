@@ -15,16 +15,16 @@ jobs:
         uses: actions/checkout@v3
 
       # Log in to DockerHub (replace with your registry)
-      - name: Docker Login
-        run: echo "${{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}}" | docker login -u "${{srinivas078}}" --password-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
+      # name: Docker Login
+       # run: echo "${{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}}" | docker login -u "${{srinivas078}}" --password-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
 
       # Build Docker image
       - name: Build Docker Image
-        run: docker build -t your-dockerhub-username/helloworld-node:latest .
+        run: docker build -t node-hello/helloworld-node:latest .
 
       # Push Docker image
       - name: Push Docker Image
-        run: docker push your-dockerhub-username/helloworld-node:latest
+        run: docker push node-hello/helloworld-node:latest
 
       # Deploy to Ubuntu server via SSH
       - name: Deploy to Ubuntu Server
