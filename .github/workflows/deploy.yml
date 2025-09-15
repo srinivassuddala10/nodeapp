@@ -16,8 +16,9 @@ jobs:
 
       # Log in to DockerHub (replace with your registry)
        name: Docker Login
-        run: echo "${{dckr_pat_ZZdANaR8MZKnVSGIRniHOUgvHO4}}" | docker login -u "${{srinivas078}}" ---password-stdin
-
+        - name: Docker Login
+  run: echo "${{ secrets.DOCKER_PAT }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      
       # Build Docker image
       - name: Build Docker Image
         run: docker build -t node-hello/helloworld-node:latest .
